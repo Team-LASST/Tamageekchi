@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a9b17a84e4d28874d9e6e51537a73a5e
+guid: 6fb50bcc0c55bae4c9db106bc3e5ade9
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Nunito
+  - Helvetica
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
