@@ -85,6 +85,6 @@ public class Application_CarePackage : MonoBehaviour
         backButton.interactable = false;
         submitButton.SetLoading(true);
         Debug.Log(string.Join(",", counts.ToArray()));
-        CloudScriptManager.Instance.ExecSubmitApplication(counts.ToArray(), _ => OnSubmissionComplete(true), _ => OnSubmissionComplete(false));
+        //CloudScriptManager.Instance.ExecSubmitApplication(counts.ToArray(), _ => OnSubmissionComplete(true), _ => OnSubmissionComplete(false));
     }
 }

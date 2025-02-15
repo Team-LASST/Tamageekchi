@@ -86,14 +86,14 @@ public class CloudScriptManager : DesignPatterns.SingletonPersistent<CloudScript
         (e) => onError(e));
     }
 
-    public void ExecSubmitApplication(int[] foodCounts, OnSuccess onSuccess, OnError onError)
+    public void ExecSubmitApplication(string hobbies, OnSuccess onSuccess, OnError onError)
     {
         PlayFabClientAPI.ExecuteCloudScript(new ExecuteCloudScriptRequest()
         {
             FunctionName = "ApproveApplication",
             FunctionParameter = new
             {
-                FoodCount = string.Join(",", foodCounts)
+                Hobbies = hobbies
             },
             GeneratePlayStreamEvent = true,
         },

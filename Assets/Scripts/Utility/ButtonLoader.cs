@@ -9,7 +9,7 @@ public class ButtonLoader : MonoBehaviour
     [Tooltip("Objects to hide during loading")]
     [SerializeField] List<GameObject> loadHideObjects;
 
-    private Button button;
+    public Button button;
 
     private void Awake()
     {
