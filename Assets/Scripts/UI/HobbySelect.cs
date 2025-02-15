@@ -15,10 +15,8 @@ public class HobbySelect : MonoBehaviour
     private ButtonLoader submitButton;
     [SerializeField]
     private UnityEvent goNextStep;
-    [SerializeField]
-    private Color normalColor = Color.white;
-    [SerializeField]
-    private Color toggledColor = Color.green;
+    public Color normalColor = Color.white;
+    public Color toggledColor = Color.green;
 
     private Dictionary<string, string> buttonToHobbyMap = new Dictionary<string, string>
     {
