@@ -151,16 +151,18 @@ public class LoginManager : MonoBehaviour
     {
         OnRememberMe(); // Save login info so player doesn't need to relogin
         splashManager.SetLoading(true);
-        CloudScriptManager.Instance.ExecGetHasApprovedApplication(approved =>
+
+        StartCoroutine(LoadGameSceneAsync("HobbyScene"));
+        /*CloudScriptManager.Instance.ExecGetHasApprovedApplication(approved =>
         {
             string sceneToLoad = approved ? "HomePage" : "ApplicationScene";
-            StartCoroutine(LoadGameSceneAsync(sceneToLoad));
+            
         },
         e =>
         {
             Debug.LogError(e.ToString());
             splashManager.SetLoading(false);
-        });
+        });*/
     }
 
     void OnError(string errorTitle, PlayFabError e)
