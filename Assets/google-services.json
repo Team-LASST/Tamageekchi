@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "352736596600",
+    "project_id": "tamageekchi",
+    "storage_bucket": "tamageekchi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352736596600:android:d5e616641d03a8b407538d",
+        "android_client_info": {
+          "package_name": "com.lasst.tamageekchi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb213dyxjkF5gm18jALe_lGGmkVqxJzbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
