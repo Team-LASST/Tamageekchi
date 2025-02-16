@@ -15,6 +15,7 @@ public class CloudScriptManager : DesignPatterns.SingletonPersistent<CloudScript
 {
     public delegate void OnSuccess(ExecuteCloudScriptResult r);
     public delegate void OnError(PlayFabError e);
+    public delegate void OnGetExpertise(string Expertise);
     public delegate void OnGetBoxId(int boxId);
     public delegate void OnGetFoodCounts(int[] foodCounts);
     public delegate void OnGetHasApprovedApplication(bool approved);
@@ -38,6 +39,18 @@ public class CloudScriptManager : DesignPatterns.SingletonPersistent<CloudScript
                 failFunc(e);
             }
         );
+    }
+
+    public void ExecGetExpertise(OnGetExpertise onSuccess, OnError onError)
+    {
+        PlayFabClientAPI.ExecuteCloudScript(new ExecuteCloudScriptRequest()
+        {
+            FunctionName = "GetExpertises",
+            FunctionParameter = new { },
+            GeneratePlayStreamEvent = true
+        },
+        (r) => onSuccess(r.FunctionResult.ToString()),
+        (e) => onError(e));
     }
 
     public void ExecGetBoxID(OnGetBoxId onSuccess, OnError onError)

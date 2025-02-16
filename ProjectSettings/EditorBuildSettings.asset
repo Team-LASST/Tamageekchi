@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HobbyScene.unity
     guid: 87fec76c2074f0a448b71b70674f02d3
+  - enabled: 1
+    path: Assets/Scenes/GeeklingScene.unity
+    guid: 94a9c300b8157ad4d94f092f37cf8e82
   m_configObjects: {}
