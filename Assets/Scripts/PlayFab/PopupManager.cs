@@ -30,7 +30,7 @@ public class PopupManager : MonoBehaviour
 
     public void ShowMessage(
         string title = "Oops!",
-        string subtitle = "You have entered the wrong email or password. Please try again.\n\nIf you have forgotten your email or password,\n please click on the links below:",
+        string subtitle = "You have entered the wrong email or password. Please try again.",
         string buttonText = "OK",
         bool showForget = true,
         System.Action closeAction = null,

@@ -57,7 +57,7 @@ public class ApplicationScene : MonoBehaviour
                     // If there is, unlink!
                     PlayFabClientAPI.UnlinkCustomID(new UnlinkCustomIDRequest() { CustomId = SystemInfo.deviceUniqueIdentifier },
                     _ => {
-                        PlayerPrefs.DeleteKey("HeartlandCustomID");
+                        PlayerPrefs.DeleteKey("TamageekchiCustomID");
                         // Clear current session
                         PlayFabClientAPI.ForgetAllCredentials();
                         // Go back to login page
