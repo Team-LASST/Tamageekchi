@@ -40,7 +40,7 @@ public class ScreenManager : MonoBehaviour
 
     public void GoHomePage()
     {
-        SceneManager.LoadScene("GeeklingScene"); // TEMP
+        SceneManager.LoadScene("MainPage");
     }
 
     public void Logout()

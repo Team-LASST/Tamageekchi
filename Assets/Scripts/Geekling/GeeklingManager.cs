@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using AYellowpaper.SerializedCollections;
+using UnityEngine.SceneManagement;
 
 public class GeeklingManager : MonoBehaviour
 {
@@ -53,6 +54,11 @@ public class GeeklingManager : MonoBehaviour
             geeklingPanel.gameObject.SetActive(true);
         }, e => Debug.LogError(e));
 
+    }
+
+    public void OnPressBack()
+    {
+        SceneManager.LoadScene("MainPage");
     }
 
     [System.Serializable]

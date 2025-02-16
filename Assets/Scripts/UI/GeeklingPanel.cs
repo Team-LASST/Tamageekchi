@@ -4,6 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 using AYellowpaper.SerializedCollections;
 using static GeeklingManager;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GeeklingPanel : MonoBehaviour
 {
@@ -25,6 +27,9 @@ public class GeeklingPanel : MonoBehaviour
     private SerializedDictionary<string, CharacterModel> characterModels;
     [SerializedDictionary("Key", "Models")]
     private SerializedDictionary<string, OutfitModel> outfitModels;
+
+    [SerializeField]
+    private TMP_Text characterText, characterBio;
 
     int currCrackIndex = 0;
 
@@ -59,12 +64,26 @@ public class GeeklingPanel : MonoBehaviour
                 model.Value.body.SetActive(model.Key == expertise);
             }
 
+            characterText.text = expertise switch
+            {
+                "Software Engineer" => "Byte-Bear",
+                "Hardware Engineer" => "Canine Envoy",
+                _ => "Stalwart Bill-der"
+            };
+
+            characterBio.text = expertise switch
+            {
+                "Software Engineer" => "A true code wizard, you will new ideas into existence with your programming prowess, raising up new systems from nothing, steadfast and sure in your skills.",
+                "Hardware Engineer" => "Calm, collected, respected. Ever-willing to lead your team and forge new alliances, you confidently take up the mantle to represent the face of the cutting edge.",
+                _ => "With a fascination for tinkering, and an undying spark to create, you build new frontiers with designs in mind and tools in hand, your ingenuity knowing little bounds."
+            };
+
         }, e => Debug.LogError(e));
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space")) // For debugging!
             OnNextCrack();
 
         Vector3 acceleration = Input.acceleration;
@@ -105,6 +124,11 @@ public class GeeklingPanel : MonoBehaviour
         geekling.gameObject.SetActive(true);
 
         eggCanvasGroup.DOFade(0f, 0.5f)
-            .OnComplete(() => nextButton.gameObject.SetActive(true));
+            .OnComplete(() =>
+            {
+                nextButton.gameObject.SetActive(true);
+                characterText.gameObject.SetActive(true);
+                characterBio.gameObject.SetActive(true);
+            });
     }
 }

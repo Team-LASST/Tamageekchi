@@ -154,7 +154,7 @@ public class LoginManager : MonoBehaviour
 
         CloudScriptManager.Instance.ExecGetHasApprovedApplication(approved =>
         {
-            string sceneToLoad = approved ? "GeeklingScene" : "HobbyScene";
+            string sceneToLoad = approved ? "MainPage" : "HobbyScene";
             StartCoroutine(LoadGameSceneAsync(sceneToLoad));  
         },
         e =>
