@@ -29,7 +29,7 @@ public class ScreenManager : MonoBehaviour
         currScreenIndex += isBackwards ? -1 : 1;
 
         // Begin animation
-        moveTween = parentTransform.DOAnchorPosX(-1040 * currScreenIndex, 1.5f).SetEase(Ease.OutSine);
+        moveTween = parentTransform.DOAnchorPosX(-1080 * currScreenIndex, 1.5f).SetEase(Ease.OutSine);
 
         transitionSequence = DOTween.Sequence();
         transitionSequence.AppendInterval(0.1f)
@@ -37,6 +37,12 @@ public class ScreenManager : MonoBehaviour
             .AppendInterval(0.5f)
             .Append(canvasGroup.DOFade(1, 0.25f));
     }
+
+    public void GoHomePage()
+    {
+        SceneManager.LoadScene("GeeklingScene"); // TEMP
+    }
+
     public void Logout()
     {
         // Unlink device ID from current account if it exists, and delete the playerprefs key
