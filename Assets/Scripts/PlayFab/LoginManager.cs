@@ -152,17 +152,16 @@ public class LoginManager : MonoBehaviour
         OnRememberMe(); // Save login info so player doesn't need to relogin
         splashManager.SetLoading(true);
 
-        StartCoroutine(LoadGameSceneAsync("HobbyScene"));
-        /*CloudScriptManager.Instance.ExecGetHasApprovedApplication(approved =>
+        CloudScriptManager.Instance.ExecGetHasApprovedApplication(approved =>
         {
-            string sceneToLoad = approved ? "HomePage" : "ApplicationScene";
-            
+            string sceneToLoad = approved ? "GeeklingScene" : "HobbyScene";
+            StartCoroutine(LoadGameSceneAsync(sceneToLoad));  
         },
         e =>
         {
             Debug.LogError(e.ToString());
             splashManager.SetLoading(false);
-        });*/
+        });
     }
 
     void OnError(string errorTitle, PlayFabError e)
