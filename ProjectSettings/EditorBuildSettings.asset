@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ApplicationScene.unity
     guid: 941581bcc15783143b5321d283f5fe4a
   - enabled: 1
+    path: Assets/Scenes/MainPage.unity
+    guid: cdee22cb43a11ca489e5944632e2a828
+  - enabled: 1
     path: Assets/Scenes/HobbyScene.unity
     guid: 87fec76c2074f0a448b71b70674f02d3
   - enabled: 1
