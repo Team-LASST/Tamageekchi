@@ -6,6 +6,7 @@ using AYellowpaper.SerializedCollections;
 using static GeeklingManager;
 using TMPro;
 using UnityEngine.SceneManagement;
+using PlayFab.ClientModels;
 
 public class GeeklingPanel : MonoBehaviour
 {
@@ -26,10 +27,12 @@ public class GeeklingPanel : MonoBehaviour
     [SerializedDictionary("Key", "Models")]
     private SerializedDictionary<string, CharacterModel> characterModels;
     [SerializedDictionary("Key", "Models")]
-    private SerializedDictionary<string, OutfitModel> outfitModels;
+    private SerializedDictionary<int, OutfitModel> outfitModels;
 
     [SerializeField]
     private TMP_Text characterText, characterBio;
+
+    
 
     int currCrackIndex = 0;
 
@@ -77,7 +80,6 @@ public class GeeklingPanel : MonoBehaviour
                 "Hardware Engineer" => "Calm, collected, respected. Ever-willing to lead your team and forge new alliances, you confidently take up the mantle to represent the face of the cutting edge.",
                 _ => "With a fascination for tinkering, and an undying spark to create, you build new frontiers with designs in mind and tools in hand, your ingenuity knowing little bounds."
             };
-
         }, e => Debug.LogError(e));
     }
 

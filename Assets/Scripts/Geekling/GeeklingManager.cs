@@ -21,12 +21,22 @@ public class GeeklingManager : MonoBehaviour
     [SerializedDictionary("Key", "Models")]
     private SerializedDictionary<string, CharacterModel> characterModels;
     [SerializedDictionary("Key", "Models")]
-    private SerializedDictionary<string, OutfitModel> outfitModels;
+    private SerializedDictionary<int, OutfitModel> outfitModels;
+
+    [SerializeField]
+    private List<ShopItem> shopItems;
+
+    int currSelectedHelmetIndex = 0;
 
     private void Start()
     {
         loadingManager.gameObject.SetActive(true);
         geeklingPanel.gameObject.SetActive(false);
+        for (int i = 0; i < shopItems.Count; i++)
+        {
+            shopItems[i].enabled = false;
+        }
+
         CloudScriptManager.Instance.ExecGetExpertise(expertise =>
         {
             if (!characterModels.ContainsKey(expertise))
@@ -52,8 +62,30 @@ public class GeeklingManager : MonoBehaviour
 
             loadingManager.gameObject.SetActive(false);
             geeklingPanel.gameObject.SetActive(true);
+
+            // Update helmet
+            CloudScriptManager.Instance.ExecGetHelmetIndex(helmet =>
+            {
+                UpdateHelmet(helmet);
+
+            }, e => Debug.LogError(e));
         }, e => Debug.LogError(e));
 
+    }
+
+    public void UpdateHelmet(int index)
+    {
+        currSelectedHelmetIndex = index;
+        foreach (var model in outfitModels)
+        {
+            model.Value.hat.gameObject.SetActive(model.Key == index);
+            model.Value.body.gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < shopItems.Count; i++)
+        {
+            shopItems[i].UpdateSelection(i == index);
+        }
     }
 
     public void OnPressBack()

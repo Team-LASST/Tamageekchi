@@ -53,16 +53,31 @@ public class CloudScriptManager : DesignPatterns.SingletonPersistent<CloudScript
         (e) => onError(e));
     }
 
-    public void ExecGetBoxID(OnGetBoxId onSuccess, OnError onError)
+    public void ExecGetHelmetIndex(OnGetBoxId onSuccess, OnError onError)
     {
         PlayFabClientAPI.ExecuteCloudScript(new ExecuteCloudScriptRequest()
         {
-            FunctionName = "GetCurrentBoxId",
+            FunctionName = "GetHelmetIndex",
             FunctionParameter = new { },
             GeneratePlayStreamEvent = true
         },
         (r) => onSuccess(System.Convert.ToInt32(r.FunctionResult.ToString())),
         (e) => onError(e));
+    }
+
+    public void ExecUpdateHelmet(int helmetIndex, OnSuccess onSuccess, OnError onError)
+    {
+        PlayFabClientAPI.ExecuteCloudScript(new ExecuteCloudScriptRequest()
+        {
+            FunctionName = "UpdateHelmet",
+            FunctionParameter = new
+            {
+                Helmet = helmetIndex
+            },
+            GeneratePlayStreamEvent = true,
+        },
+        r => onSuccess(r),
+        e => onError(e));
     }
 
     public void ExecGetFoodCounts(OnGetFoodCounts onSuccess, OnError onError)
