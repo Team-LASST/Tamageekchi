@@ -101,6 +101,21 @@ public class CloudScriptManager : DesignPatterns.SingletonPersistent<CloudScript
         e => onError(e));
     }
 
+    public void ExecSubmitExpertise(string expertises, OnSuccess onSuccess, OnError onError)
+    {
+        PlayFabClientAPI.ExecuteCloudScript(new ExecuteCloudScriptRequest()
+        {
+            FunctionName = "SubmitExpertise",
+            FunctionParameter = new
+            {
+                Expertises = expertises
+            },
+            GeneratePlayStreamEvent = true,
+        },
+        r => onSuccess(r),
+        e => onError(e));
+    }
+
     void OnExecSucc(ExecuteCloudScriptResult r)
     {
         Debug.Log("Response from server: " + r.FunctionResult.ToString());
