@@ -26,14 +26,15 @@ public class GeeklingPanel : MonoBehaviour
     [SerializeField]
     [SerializedDictionary("Key", "Models")]
     private SerializedDictionary<string, CharacterModel> characterModels;
+    [SerializeField]
     [SerializedDictionary("Key", "Models")]
     private SerializedDictionary<int, OutfitModel> outfitModels;
 
     [SerializeField]
     private TMP_Text characterText, characterBio;
 
-    
 
+    int currSelectedHelmetIndex = 0;
     int currCrackIndex = 0;
 
     private float shakeDetectionThreshold = 2f;
@@ -42,14 +43,7 @@ public class GeeklingPanel : MonoBehaviour
     private float lowPassFilterFactor;
     private Vector3 lowPassValue;
 
-    private void Start()
-    {
-        lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
-        shakeDetectionThreshold *= shakeDetectionThreshold;
-        lowPassValue = Input.acceleration;
-    }
-
-    private void OnEnable()
+    public void UpdateCharacter()
     {
         CloudScriptManager.Instance.ExecGetExpertise(expertise =>
         {
@@ -74,13 +68,20 @@ public class GeeklingPanel : MonoBehaviour
                 _ => "Stalwart Bill-der"
             };
 
-            characterBio.text = expertise switch
+            // Update helmet
+            CloudScriptManager.Instance.ExecGetHelmetIndex(helmet =>
             {
-                "Software Engineer" => "A true code wizard, you will new ideas into existence with your programming prowess, raising up new systems from nothing, steadfast and sure in your skills.",
-                "Hardware Engineer" => "Calm, collected, respected. Ever-willing to lead your team and forge new alliances, you confidently take up the mantle to represent the face of the cutting edge.",
-                _ => "With a fascination for tinkering, and an undying spark to create, you build new frontiers with designs in mind and tools in hand, your ingenuity knowing little bounds."
-            };
+                UpdateHelmet(helmet);
+
+            }, e => Debug.LogError(e));
         }, e => Debug.LogError(e));
+    }
+
+    private void Start()
+    {
+        lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
+        shakeDetectionThreshold *= shakeDetectionThreshold;
+        lowPassValue = Input.acceleration;
     }
 
     private void Update()
@@ -132,5 +133,18 @@ public class GeeklingPanel : MonoBehaviour
                 characterText.gameObject.SetActive(true);
                 characterBio.gameObject.SetActive(true);
             });
+    }
+
+    public void UpdateHelmet(int index)
+    {
+        currSelectedHelmetIndex = index;
+        foreach (var model in outfitModels)
+        {
+            if (model.Value.hat == null)
+                continue;
+
+            model.Value.hat.gameObject.SetActive(model.Key == index);
+            model.Value.body.gameObject.SetActive(false);
+        }
     }
 }

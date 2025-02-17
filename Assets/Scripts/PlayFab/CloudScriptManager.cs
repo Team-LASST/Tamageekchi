@@ -61,7 +61,7 @@ public class CloudScriptManager : DesignPatterns.SingletonPersistent<CloudScript
             FunctionParameter = new { },
             GeneratePlayStreamEvent = true
         },
-        (r) => onSuccess(System.Convert.ToInt32(r.FunctionResult.ToString())),
+        (r) => onSuccess((r == null || r.FunctionResult == null) ? 0 : System.Convert.ToInt32(r.FunctionResult.ToString())),
         (e) => onError(e));
     }
 

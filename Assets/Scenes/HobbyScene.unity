@@ -1242,6 +1242,24 @@ MonoBehaviour:
         leftArm: {fileID: 1919658874}
         rightArm: {fileID: 1090685015}
         body: {fileID: 91418756}
+  outfitModels:
+    _serializedList:
+    - Key: 0
+      Value:
+        hat: {fileID: 0}
+        body: {fileID: 0}
+    - Key: 1
+      Value:
+        hat: {fileID: 715006761}
+        body: {fileID: 1305246774}
+    - Key: 2
+      Value:
+        hat: {fileID: 947520114}
+        body: {fileID: 536086416}
+    - Key: 3
+      Value:
+        hat: {fileID: 791569636}
+        body: {fileID: 923897343}
   characterText: {fileID: 1223522474}
   characterBio: {fileID: 2074778077}
 --- !u!1001 &431475420
@@ -2055,23 +2073,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1086121640}
+    - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 428210936}
+    - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnTransition
       objectReference: {fileID: 0}
     - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ScreenManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GeeklingPanel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -2079,6 +2117,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 73440293118797423, guid: f0d486063233c0a4784693b95ee67ea7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3008,10 +3050,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

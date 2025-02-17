@@ -301,6 +301,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1720051166957950676, guid: 47dbe96f418a3f54da97355f5e4fa027, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1720051166957950678, guid: 47dbe96f418a3f54da97355f5e4fa027, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -664,6 +668,24 @@ MonoBehaviour:
         leftArm: {fileID: 6972827574625248368}
         rightArm: {fileID: 5075761159596747922}
         body: {fileID: 1792518612}
+  outfitModels:
+    _serializedList:
+    - Key: 0
+      Value:
+        hat: {fileID: 0}
+        body: {fileID: 0}
+    - Key: 1
+      Value:
+        hat: {fileID: 1820628887}
+        body: {fileID: 1781573807}
+    - Key: 2
+      Value:
+        hat: {fileID: 802866222}
+        body: {fileID: 755400942}
+    - Key: 3
+      Value:
+        hat: {fileID: 820779318}
+        body: {fileID: 2093945486}
   shopItems:
   - {fileID: 7335337011674242260}
   - {fileID: 1004842060}
@@ -1474,6 +1496,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button_Helmet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7335337010912856631, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1666,6 +1704,22 @@ PrefabInstance:
     - target: {fileID: 7335337010912856624, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
       propertyPath: m_Name
       value: Button_Helmet (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7335337010912856631, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
       propertyPath: m_Pivot.x
@@ -3254,6 +3308,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button_Helmet (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7335337010912856631, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3341,7 +3411,7 @@ PrefabInstance:
     - target: {fileID: 7335337011289757940, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1cbd2d1db7f28984192aef21974ad841, type: 3}
+      objectReference: {fileID: 21300000, guid: a79797cc5fc0d7545b2a75ad425636c3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
 --- !u!114 &2106116776 stripped
@@ -4151,6 +4221,30 @@ PrefabInstance:
     - target: {fileID: 7335337010912856624, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
       propertyPath: m_Name
       value: Button_Helmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335337010912856628, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7335337010912856631, guid: f92e075fb18b8464580a0efbabd20abf, type: 3}
       propertyPath: m_Pivot.x

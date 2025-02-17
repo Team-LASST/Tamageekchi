@@ -19,6 +19,7 @@ public class ShopItem : MonoBehaviour
     public void UpdateSelection(bool select)
     {
         GetComponent<Image>().sprite = select ? selectSprite : unselectSprite;
+        GetComponent<Image>().color = new Color(1, 1, 1, select ? 1f : 0.5f);
         GetComponent<Button>().interactable = !select;
     }
 }

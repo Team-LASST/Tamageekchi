@@ -8,12 +8,7 @@ public class NavBar : MonoBehaviour
 
     void Start()
     {
-        sceneButtons[0].onClick.AddListener(() => LoadScene(4));
+        sceneButtons[0].onClick.AddListener(() => SceneManager.LoadScene("GeeklingScene"));
 
-    }
-
-    void LoadScene(int sceneIndex)
-    {
-        SceneManager.LoadScene(sceneIndex);
     }
 }

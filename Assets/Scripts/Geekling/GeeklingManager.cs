@@ -20,6 +20,7 @@ public class GeeklingManager : MonoBehaviour
     [SerializeField]
     [SerializedDictionary("Key", "Models")]
     private SerializedDictionary<string, CharacterModel> characterModels;
+    [SerializeField]
     [SerializedDictionary("Key", "Models")]
     private SerializedDictionary<int, OutfitModel> outfitModels;
 
@@ -34,7 +35,8 @@ public class GeeklingManager : MonoBehaviour
         geeklingPanel.gameObject.SetActive(false);
         for (int i = 0; i < shopItems.Count; i++)
         {
-            shopItems[i].enabled = false;
+            int temp = i;
+            shopItems[i].button.onClick.AddListener(() => UpdateHelmet(temp));
         }
 
         CloudScriptManager.Instance.ExecGetExpertise(expertise =>
@@ -60,13 +62,13 @@ public class GeeklingManager : MonoBehaviour
                 _ => "Stalwart Bill-der"
             };
 
-            loadingManager.gameObject.SetActive(false);
-            geeklingPanel.gameObject.SetActive(true);
-
             // Update helmet
             CloudScriptManager.Instance.ExecGetHelmetIndex(helmet =>
             {
                 UpdateHelmet(helmet);
+
+                loadingManager.gameObject.SetActive(false);
+                geeklingPanel.gameObject.SetActive(true);
 
             }, e => Debug.LogError(e));
         }, e => Debug.LogError(e));
@@ -78,6 +80,9 @@ public class GeeklingManager : MonoBehaviour
         currSelectedHelmetIndex = index;
         foreach (var model in outfitModels)
         {
+            if (model.Value.hat == null)
+                continue;
+
             model.Value.hat.gameObject.SetActive(model.Key == index);
             model.Value.body.gameObject.SetActive(false);
         }
@@ -90,7 +95,7 @@ public class GeeklingManager : MonoBehaviour
 
     public void OnPressBack()
     {
-        SceneManager.LoadScene("MainPage");
+        CloudScriptManager.Instance.ExecUpdateHelmet(currSelectedHelmetIndex, _ => SceneManager.LoadScene("MainPage"), e => Debug.LogError(e));
     }
 
     [System.Serializable]
